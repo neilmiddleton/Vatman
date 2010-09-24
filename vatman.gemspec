@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ["lib/vatman.rb"]
   s.files = ["Rakefile", "lib/vatman.rb", "test/test_helper.rb", "test/test_vatman.rb", "Manifest", "vatman.gemspec"]
   s.homepage = %q{http://github.com/neilmiddleton/vatman}
-  s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Vatman"]
+  s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Vatman", "--main", "Readme.rdoc"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{vatman}
   s.rubygems_version = %q{1.3.7}
