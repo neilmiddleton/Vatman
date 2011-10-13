@@ -1,29 +1,36 @@
-require 'soap/wsdlDriver'
+require "vatman/version"
+require 'savon'
 
-class Vatman
-  def initialize(country, number)
-    @country, @number = country, number
-  end
-  
-  def name
-    get_variable(:name)
-  end
-  
-  def address
-    get_variable(:address)
-  end
-  
-  def valid?
-    get_variable(:valid) == 'true'
-  end
-  
-  private
-  
-    def response
-      @response ||= SOAP::WSDLDriverFactory.new('http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl').create_rpc_driver.checkVat(:countryCode => @country, :vatNumber => @number)
+module Vatman
+  class Check
+
+    def initialize(country, number)
+      @country, @number = country, number.to_s.gsub(' ', '')
     end
   
-    def get_variable(var)
-      response.send(var) if response.respond_to?(var)
+    def valid?
+      response[:valid]
     end
+
+    def name
+      response[:name]
+    end
+
+    def address
+      response[:address]
+    end
+
+    private
+
+      def response
+        @response ||= get_vat_check
+      end
+
+      def get_vat_check
+        client = ::Savon::Client.new("http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl")
+        response = client.request :tnsl, :check_vat, :body => {:country_code => @country, :vat_number => @number}
+        response.to_hash[:check_vat_response]
+      end
+  end
 end
+
