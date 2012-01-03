@@ -1,9 +1,13 @@
-= vatman
+vatman
+======
 
 vatman is a library for checking VAT numbers against the Europa webservice.
 This is the ONLY way to check if a VAT number is genuine and in use.
 
-== Usage 
+[![Build Status](https://secure.travis-ci.org/neilmiddleton/Vatman.png)](http://travis-ci.org/neilmiddleton/Vatman)
+
+Usage
+-----
 
   vat_number =  Vatman::Check.new('GB', 802925148)
   
@@ -11,7 +15,8 @@ This is the ONLY way to check if a VAT number is genuine and in use.
   vat_number.name => 'MONOCHROME LIMITED'
   vat_number.address => 'SUITE K\nTHE PAVILLIONS\n1 WESTERN ROAD\nEPSOM\nSURREY\nKT17 1JG'
 
-== Installation
+Installation
+------------
 
   gem install vatman
 
@@ -19,7 +24,8 @@ and then
 
   require 'vatman'
 
-== Note on Patches/Pull Requests
+Note on Patches/Pull Requests
+-----------------------------
 
 * Fork the project.
 * Make your feature addition or bug fix.
