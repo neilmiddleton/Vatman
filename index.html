@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Vatman by neilmiddleton</title>
+    
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Vatman</h1>
+        <p>A gem that checks VAT numbers against the Europa web service</p>
+        <p class="view"><a href="https://github.com/neilmiddleton/Vatman">View the Project on GitHub <small>neilmiddleton/Vatman</small></a></p>
+        <ul>
+          <li><a href="https://github.com/neilmiddleton/Vatman/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/neilmiddleton/Vatman/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/neilmiddleton/Vatman">Fork On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>vatman is a library for checking VAT numbers against the Europa webservice.
+This is the ONLY way to check if a VAT number is genuine and in use.</p>
+
+<h2>Usage</h2>
+
+<pre><code>vat_number =  Vatman::Check.new('GB', 802925148)
+
+vat_number.valid? =&gt; true
+vat_number.name =&gt; 'MONOCHROME LIMITED'
+vat_number.address =&gt; 'SUITE K\nTHE PAVILLIONS\n1 WESTERN ROAD\nEPSOM\nSURREY\nKT17 1JG'
+</code></pre>
+
+<h2>Installation</h2>
+
+<pre><code>gem install vatman
+</code></pre>
+
+<p>and then</p>
+
+<pre><code>require 'vatman'
+</code></pre>
+
+<h2>Note on Patches/Pull Requests</h2>
+
+<ul>
+<li>Fork the project.</li>
+<li>Make your feature addition or bug fix.</li>
+<li>Add tests for it. This is important so I don’t break it in a future version unintentionally.</li>
+<li>Commit, do not mess with rakefile, version, or history. (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)</li>
+<li>Send me a pull request. Bonus points for topic branches.</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/neilmiddleton">neilmiddleton</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
